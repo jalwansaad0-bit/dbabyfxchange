@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBABYFXCHANGE - Fast & Secure Currency Exchange</title>
+  <style>
+    :root {
+      --primary: #0a2540;
+      --accent: #00d4b1;
+      --bg: #f8f9fa;
+      --text: #333;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+    }
+
+    .hero {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .exchange-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">DBABYFXCHANGE</div>
+    <nav>
+      <a href="#rates">Rates</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div>
+      <h1>Exchange Currency Seamlessly</h1>
+      <p>Fast transactions, competitive live exchange rates, and trusted security for all your forex needs.</p>
+    </div>
+
+    <div class="exchange-card">
+      <h2>Currency Converter</h2>
+      <form id="exchange-form">
+        <div class="form-group">
+          <label for="amount">You Send</label>
+          <input type="number" id="amount" placeholder="1000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="from-currency">From</label>
+          <select id="from-currency">
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="NGN">NGN - Nigerian Naira</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="to-currency">To</label>
+          <select id="to-currency">
+            <option value="NGN">NGN - Nigerian Naira</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Proceed to Exchange</button>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
