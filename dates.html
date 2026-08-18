@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dbabyfxchange - Live Time & Translation</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #0b0e11; color: #fff; }
+    .widget-container { display: flex; gap: 20px; align-items: center; background: #1e2329; padding: 15px; border-radius: 8px; }
+    #time-display { font-size: 1.1rem; font-weight: bold; color: #f0b90b; }
+  </style>
+</head>
+<body>
+
+  <div class="widget-container">
+    <!-- Live Time Display -->
+    <div id="time-display">Loading time...</div>
+
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
+  </div>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,zh-CN,ja,ar,pt,ru,hi,yo,ha,ig', // Add needed ISO codes
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Live Date & Time Script -->
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      // Formats date & time automatically based on visitor's local system timezone
+      const formattedDate = now.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+      const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      
+      document.getElementById('time-display').innerText = `${formattedDate} | ${formattedTime} (Local)`;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+
+</body>
+</html>
